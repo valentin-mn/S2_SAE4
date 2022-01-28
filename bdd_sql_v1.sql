@@ -1,5 +1,37 @@
+
+
+DROP TABLE IF EXISTS poste;
+DROP TABLE IF EXISTS concerne;
+DROP TABLE IF EXISTS panier;
+DROP TABLE IF EXISTS ligne_commande_;
+DROP TABLE IF EXISTS est_en;
+DROP TABLE IF EXISTS est_genre;
+DROP TABLE IF EXISTS saisonne_pour;
+DROP TABLE IF EXISTS appartient_a;
+DROP TABLE IF EXISTS propose;
+DROP TABLE IF EXISTS est_dispo;
+DROP TABLE IF EXISTS commande;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS vetement;
+DROP TABLE IF EXISTS avis;
+DROP TABLE IF EXISTS etat;
+DROP TABLE IF EXISTS matiere;
+DROP TABLE IF EXISTS sexe;
+DROP TABLE IF EXISTS Saison;
+DROP TABLE IF EXISTS type_vetement;
+DROP TABLE IF EXISTS marque;
+DROP TABLE IF EXISTS taille;
+DROP TABLE IF EXISTS style;
+DROP TABLE IF EXISTS adresse;
+
+
+
+
+
+
+
 CREATE TABLE adresse(
-   Id_adresse INT AUTO_INCREMENT,
+   id_adresse INT AUTO_INCREMENT,
    region_adresse VARCHAR(50),
    ville_adresse VARCHAR(50),
    cp_adresse VARCHAR(50),
@@ -7,11 +39,23 @@ CREATE TABLE adresse(
    PRIMARY KEY(Id_adresse)
 );
 
+INSERT INTO adresse(id_adresse, region_adresse, ville_adresse, cp_adresse, pays_adresse) VALUES
+(NULL, 'Grand Est', 'Metz', '57000', 'France'),
+(NULL, 'Grand Est', 'Nancy', '54000', 'France'),
+(NULL, 'Centre', 'Orléans', '45000', 'France'),
+(NULL, 'Grand Est', 'Metz', '57000', 'France');
+
 CREATE TABLE style(
-   id_style COUNTER AUTO_INCREMENT,
+   id_style INT AUTO_INCREMENT,
    libelle_style VARCHAR(50),
    PRIMARY KEY(id_style)
 );
+
+INSERT INTO style(id_style, libelle_style) VALUES
+(NULL, 'Streetwear'),
+(NULL, 'Habillé'),
+(NULL, 'Casual'),
+(NULL, 'Sous vêtements');
 
 CREATE TABLE taille(
    id_taille INT AUTO_INCREMENT,
@@ -24,6 +68,9 @@ CREATE TABLE marque(
    libelle_marque VARCHAR(50),
    PRIMARY KEY(id_marque)
 );
+
+INSERT INTO marque(id_marque, libelle_marque) VALUES
+(NULL, '')
 
 CREATE TABLE type_vetement(
    id_type_vetement INT AUTO_INCREMENT,
@@ -38,7 +85,7 @@ CREATE TABLE Saison(
 );
 
 CREATE TABLE sexe(
-   id_sexe COUNTER AUTO_INCREMENT,
+   id_sexe INT AUTO_INCREMENT,
    libelle_sexe VARCHAR(50),
    PRIMARY KEY(id_sexe)
 );
