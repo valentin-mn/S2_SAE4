@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS avis;
 DROP TABLE IF EXISTS etat;
 DROP TABLE IF EXISTS matiere;
 DROP TABLE IF EXISTS sexe;
-DROP TABLE IF EXISTS Saison;
+DROP TABLE IF EXISTS saison;
 DROP TABLE IF EXISTS type_vetement;
 DROP TABLE IF EXISTS marque;
 DROP TABLE IF EXISTS taille;
@@ -55,13 +55,23 @@ INSERT INTO style(id_style, libelle_style) VALUES
 (NULL, 'Streetwear'),
 (NULL, 'Habillé'),
 (NULL, 'Casual'),
-(NULL, 'Sous vêtements');
+(NULL, 'Classique'),
+(NULL, 'Sportif');
+
 
 CREATE TABLE taille(
    id_taille INT AUTO_INCREMENT,
    libelle_taille VARCHAR(50),
    PRIMARY KEY(id_taille)
 );
+INSERT INTO taille (id_taille, libelle_taille) VALUES
+(NULL, 'XS'),
+(NULL, 'S'),
+(NULL, 'M'),
+(NULL, 'L'),
+(NULL, 'XL'),
+(NULL, 'XXL');
+
 
 CREATE TABLE marque(
    id_marque INT AUTO_INCREMENT,
@@ -70,7 +80,11 @@ CREATE TABLE marque(
 );
 
 INSERT INTO marque(id_marque, libelle_marque) VALUES
-(NULL, '')
+(NULL, 'Nike'),
+(NULL, 'Levis'),
+(NULL, 'Jack and jones'),
+(NULL, 'The North Face'),
+(NULL, 'Calvin Klein');
 
 CREATE TABLE type_vetement(
    id_type_vetement INT AUTO_INCREMENT,
@@ -78,11 +92,31 @@ CREATE TABLE type_vetement(
    PRIMARY KEY(id_type_vetement)
 );
 
-CREATE TABLE Saison(
-   id_Saison INT AUTO_INCREMENT,
+INSERT INTO type_vetement(id_type_vetement, libelle_type_vetement) VALUES
+(NULL, 'T-Shirt'),
+(NULL, 'Pantalon'),
+(NULL, 'Jean'),
+(NULL, 'Sweatshirt'),
+(NULL, 'Pull'),
+(NULL, 'Gilet'),
+(NULL, 'Manteau'),
+(NULL, 'Veste'),
+(NULL, 'Echarpe'),
+(NULL, 'Sous-vêtements'),
+(NULL, 'Bonnets'),
+(NULL, 'Gants'),
+(NULL, 'Masques');
+
+
+CREATE TABLE saison(
+   id_saison INT AUTO_INCREMENT,
    libelle_saison VARCHAR(50),
-   PRIMARY KEY(id_Saison)
+   PRIMARY KEY(id_saison)
 );
+
+INSERT INTO saison(id_saison, libelle_saison) VALUES
+(NULL, 'Printemps/Eté'),
+(NULL, 'Automne/Hiver');
 
 CREATE TABLE sexe(
    id_sexe INT AUTO_INCREMENT,
