@@ -9,8 +9,12 @@ Groupe numéro : 5
 
 URL du projet github : https://github.com/ObyII/S2_SAE4
 
-URL du site pythonanywhere : vmunch.pythonanywhere.com
+URL du site pythonanywhere : https://vmunch.pythonanywhere.com
 
-# Notre Rapport
+## Le fichier SQL associé
+
+[SQL](ecommerce_jujudesign.sql)
+
+## Notre Rapport
 
 [Rapport](Rapport_SAE4_groupe5_MUNCH.pdf )
