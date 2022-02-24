@@ -18,3 +18,12 @@ URL du site pythonanywhere : https://vmunch.pythonanywhere.com
 ## Notre Rapport
 
 [Rapport](Rapport_SAE4_groupe5_MUNCH.pdf )
+
+## Premier MCD - côté client
+
+[LOOPING](JujuDesign-v2.loo)
+
+## Premier MCD - côté admin/fournisseur/livreur
+
+
+[LOOPING 2](JujuDesign-v2-with-supplier.loo)
