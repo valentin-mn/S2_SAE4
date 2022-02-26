@@ -27,3 +27,7 @@ URL du site pythonanywhere : https://vmunch.pythonanywhere.com
 
 
 [LOOPING 2](JujuDesign-v2-with-supplier.loo)
+
+## Tous les fichiers du site
+
+[Télécharger](JUJUDESIGNV4.zip)
