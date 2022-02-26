@@ -1,4 +1,4 @@
-# S2_SAE4
+# S2_SAE 2.04 -- BDD ,  site de E-Commerce
 
 Groupe numéro : 5
 
@@ -23,11 +23,12 @@ URL du site pythonanywhere : https://vmunch.pythonanywhere.com
 
 [LOOPING](JujuDesign-v2.loo)
 
-## Premier MCD - côté admin/fournisseur/livreur
-
+## Deuxième MCD - côté admin/fournisseur/livreur
 
 [LOOPING 2](JujuDesign-v2-with-supplier.loo)
 
 ## Tous les fichiers du site
 
 [Télécharger](JUJUDESIGNV4.zip)
+
+> Il faut uniquement changer dans le fichier connexion_db.py la valeur de "user", "password", "database" et si besoin le "localhost".
