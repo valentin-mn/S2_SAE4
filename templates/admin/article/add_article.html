@@ -1,0 +1,362 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Add vetement
+{% endblock %}
+
+{% block body %}
+
+    <script>
+    valeurs_taille=[]
+    function afficher_taille() {
+        div=document.getElementById("ajouter_taille");
+        button=document.getElementById("button_show_taille");
+        if (div.style.display=="none"){
+            div.style.display="flex";
+            button.innerHTML="Cliquez pour masquer";
+        }
+        else {
+            div.style.display="none";
+            button.innerHTML="Cliquez pour afficher";
+        }
+    }
+
+    function add_taille() {
+        affichage = document.getElementById("affichage_taille");
+        inputs = document.getElementById("input_taille");
+        total = document.getElementById("nb_taille");
+        texte = document.getElementById('taille').options[document.getElementById('taille').selectedIndex].text;
+        valeur = taille.value;
+        quantite = document.getElementById('quantite')
+        if (!(valeurs_taille.indexOf(valeur) > -1)) {
+            affichage.innerHTML += "<div class='btn-border-d m-1' style='min-width: 30px;text-align: center'>" + texte + " (" + quantite.value + ")</div>";
+            inputs.innerHTML += "<input type='hidden' name='taille_" + valeurs_taille.length + "' value='" + valeur + "'>"
+            inputs.innerHTML += "<input type='hidden' name='quantite_" + valeurs_taille.length + "' value='" + quantite.value + "'>"
+            valeurs_taille.push(valeur)
+            total.value = valeurs_taille.length;
+
+        }
+    }
+
+        function resettaille(){
+        document.getElementById("affichage_taille").innerHTML='';
+        document.getElementById("input_taille").innerHTML='';
+        document.getElementById("nb_taille").value=0;
+        valeurs_taille=[]
+    }
+
+
+    valeurs_style=[]
+    function afficher_style() {
+        div=document.getElementById("ajouter_style");
+        button=document.getElementById("button_show_style");
+        if (div.style.display=="none"){
+            div.style.display="flex";
+            button.innerHTML="Cliquez pour masquer";
+        }
+        else {
+            div.style.display="none";
+            button.innerHTML="Cliquez pour afficher";
+        }
+    }
+
+    function add_style() {
+        affichage = document.getElementById("affichage_style");
+        inputs = document.getElementById("input_style");
+        total = document.getElementById("nb_style");
+        texte = document.getElementById('style').options[document.getElementById('style').selectedIndex].text;
+        valeur = style.value;
+        quantite = document.getElementById('quantite')
+        console.log('Voici le texte');
+        console.log(texte);
+        if (!(valeurs_style.indexOf(valeur) > -1)) {
+            affichage.innerHTML += "<div class='btn-border-d m-1' style='min-width: 30px;text-align: center'>" + texte + "</div>";
+            inputs.innerHTML += "<input type='hidden' name='style_" + valeurs_style.length + "' value='" + valeur + "'>"
+            valeurs_style.push(valeur);
+            total.value = valeurs_style.length;
+        }
+    }
+
+    function resetstyle(){
+        document.getElementById("affichage_style").innerHTML='';
+        document.getElementById("input_style").innerHTML='';
+        document.getElementById("nb_style").value=0;
+        valeurs_style=[];
+
+    }
+
+    //Matiere
+         valeurs_matiere=[]
+    function afficher_matiere() {
+        div=document.getElementById("ajouter_matiere");
+        button=document.getElementById("button_show_matiere");
+        if (div.style.display=="none"){
+            div.style.display="flex";
+            button.innerHTML="Cliquez pour masquer";
+        }
+        else {
+            div.style.display="none";
+            button.innerHTML="Cliquez pour afficher";
+        }
+    }
+
+    function add_matiere() {
+        affichage = document.getElementById("affichage_matiere");
+        inputs = document.getElementById("input_matiere");
+        total = document.getElementById("nb_matiere");
+        texte = document.getElementById('matiere').options[document.getElementById('matiere').selectedIndex].text;
+        valeur = matiere.value;
+        if (!(valeurs_matiere.indexOf(valeur) > -1)) {
+            affichage.innerHTML += "<div class='btn-border-d m-1' style='min-width: 30px;text-align: center'>" + texte + "</div>";
+            inputs.innerHTML += "<input type='hidden' name='matiere_" + valeurs_matiere.length + "' value='" + valeur + "'>"
+            valeurs_matiere.push(valeur)
+            total.value = valeurs_matiere.length;
+        }
+    }
+
+    function resetmatiere(){
+        document.getElementById("affichage_matiere").innerHTML='';
+        document.getElementById("input_matiere").innerHTML='';
+        document.getElementById("nb_matiere").value=0;
+        valeurs_matiere=[]
+
+    }
+
+            //marque
+         valeurs_marque=[]
+    function afficher_marque() {
+        div=document.getElementById("ajouter_marque");
+        button=document.getElementById("button_show_marque");
+        if (div.style.display=="none"){
+            div.style.display="flex";
+            button.innerHTML="Cliquez pour masquer";
+        }
+        else {
+            div.style.display="none";
+            button.innerHTML="Cliquez pour afficher";
+        }
+    }
+
+    function add_marque() {
+        affichage = document.getElementById("affichage_marque");
+        inputs = document.getElementById("input_marque");
+        total = document.getElementById("nb_marque");
+        texte = document.getElementById('marque').options[document.getElementById('marque').selectedIndex].text;
+        valeur = marque.value;
+        quantite = document.getElementById('quantite')
+        if (!(valeurs_marque.indexOf(valeur) > -1)) {
+            affichage.innerHTML += "<div class='btn-border-d m-1' style='min-width: 30px;text-align: center'>" + texte + "</div>";
+            inputs.innerHTML += "<input type='hidden' name='marque_" + valeurs_marque.length + "' value='" + valeur + "'>"
+            valeurs_marque.push(valeur)
+            total.value = valeurs_marque.length;
+        }
+    }
+
+    function resetmarque(){
+        document.getElementById("affichage_marque").innerHTML='';
+        document.getElementById("input_marque").innerHTML='';
+        document.getElementById("nb_marque").value=0;
+        valeurs_marque=[]
+    }
+
+    </script>
+    <div class="main" style="margin-top: 0px;">
+        <section class="module bg-dark-30" data-background=" {{ url_for('static', filename='/assets/images/Simple_Shiny.svg') }} ">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt mb-0">Ajouter un article</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="module">
+            <div class="container">
+                <div id="message_flashed"></div>
+                <div class="row">
+                    <form action="/admin/article/add" enctype="multipart/form-data" method="post">
+                        <div class="col-sm-5 col-sm-offset-1 mb-sm-40">
+                            <label for="form_img" class="form-control btn btn-d btn-circle">Selectionner une image</label>
+                            <input type="file" name="img" id="form_img" class="form_img" style="opacity: 0%" required>
+                            <div class="preview">
+                                <p class="font-alt btn-border-d text-center">Aucun fichier sélectionné pour le moment</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="nom">Nom du produit</label>
+                            <input class="form-control" name="nom" type="text" id="nom" placeholder="Nom de l'article">
+                            <label >Prix</label>
+                            <input class="form-control" name="prix" type="number" min="0" step="0.01" id="prix">
+                            <label for="sexe">Sexe</label>
+                            <select class="form-control" name="sexe" id="sexe">
+                                <option value="">Choisir un sexe</option>
+                                {% for sex in sexe %}
+                                    <option value="{{ sex.id_sexe }}">{{ sex.libelle_sexe }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="type">Type</label>
+                            <select class="form-control" name="type" id="type">
+                                <option value="">Choisir un type</option>
+                                {% for typ in type %}
+                                    <option value="{{ typ.id_type_vetement }}">{{ typ.libelle_type_vetement }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <label for="taille">Taille <a  onclick="resettaille()"><i class="fa fa-repeat"></i></a></label><br>
+                            <div id="input_taille"></div>
+                            <input type="hidden" id="nb_taille" name="nb_taille" value="0">
+
+                            <div id="affichage_taille" style="display: flex"></div>
+                             <button onclick="afficher_taille()" id="button_show_taille" type="button" class="btn btn-g btn-round mb-10">Cliquez pour afficher</button>
+
+                            <div style="display: none; transition: opacity 0.5s;" id="ajouter_taille">
+                                <br>
+                                <select class="form-control" name="taille" id="taille">
+                                    {% for taill in taille %}
+                                        <option value="{{ taill.id_taille }}">{{ taill.libelle_taille }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input type="number" name="quantite" class="form-control" id="quantite" min="0" value="0">
+                                <button id="button_add_taille" type="button" onclick="add_taille()"><i class="fa fa-fw">&#xf067;</i></button>
+                            </div>
+
+
+                        <!-- Style -->
+                            <br>
+                            <label for="style">Style <a  onclick="resetstyle()"><i class="fa fa-repeat"></i></a></label><br>
+                            <div id="input_style"></div>
+                            <input type="hidden" id="nb_style" name="nb_style" value="0">
+                            <div id="affichage_style" style="display: flex"></div>
+                            <button onclick="afficher_style()" id="button_show_style" type="button" class="btn btn-g btn-round mb-10">Cliquez pour afficher</button>
+
+                            <div style="display: none; transition: opacity 0.5s;" id="ajouter_style">
+                                <br>
+                                <select class="form-control" name="style" id="style">
+                                    {% for styl in style %}
+                                        <option value="{{ styl.id_style }}">{{ styl.libelle_style }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button id="button_add_style" type="button" onclick="add_style()"><i class="fa fa-fw">&#xf067;</i></button>
+                            </div>
+
+                            <!-- matiere -->
+                            <br>
+                            <label for="matiere">Matiere <a  onclick="resetmatiere()"><i class="fa fa-repeat"></i></a></label><br>
+                            <div id="input_matiere"></div>
+                            <input type="hidden" id="nb_matiere" name="nb_matiere" value="0">
+                            <div id="affichage_matiere" style="display: flex"></div>
+                            <button onclick="afficher_matiere()" id="button_show_matiere" type="button" class="btn btn-g btn-round mb-10">Cliquez pour afficher</button>
+
+                            <div style="display: none; transition: opacity 0.5s;" id="ajouter_matiere">
+                                <br>
+                                <select class="form-control" name="matiere" id="matiere">
+                                    {% for styl in matiere %}
+                                        <option value="{{ styl.id_matiere }}">{{ styl.libelle_matiere }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button id="button_add_matiere" type="button" onclick="add_matiere()"><i class="fa fa-fw">&#xf067;</i></button>
+                            </div>
+
+
+
+                         <!-- marque -->
+                            <br>
+                            <label for="marque">Marque <a  onclick="resetmarque()"><i class="fa fa-repeat"></i></a></label><br>
+                            <div id="input_marque"></div>
+                            <input type="hidden" id="nb_marque" name="nb_marque" value="0">
+                            <div id="affichage_marque" style="display: flex"></div>
+                            <button onclick="afficher_marque()" id="button_show_marque" type="button" class="btn btn-g btn-round mb-10">Cliquez pour afficher</button>
+
+                            <div style="display: none; transition: opacity 0.5s;" id="ajouter_marque">
+                                <br>
+                                <select class="form-control" name="marque" id="marque">
+                                    {% for styl in marque %}
+                                        <option value="{{ styl.id_marque }}">{{ styl.libelle_marque }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button id="button_add_marque" type="button" onclick="add_marque()"><i class="fa fa-fw">&#xf067;</i></button>
+                            </div>
+                            <br><br>
+                            <button type="submit" class="btn btn-border-d">Valider</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+     <script>
+    const input = document.querySelector('.form_img');
+    const preview = document.querySelector('.preview');
+    console.log('yop');
+    input.style.opacity = 0;
+
+    input.addEventListener('change', updateImageDisplay);
+
+    function updateImageDisplay() {
+      while(preview.firstChild) {
+        preview.removeChild(preview.firstChild);
+      }
+
+      const curFiles = input.files;
+      if(curFiles.length === 0) {
+        const para = document.createElement('p');
+        para.textContent = 'Aucun fichier';
+        preview.appendChild(para);
+      } else {
+        const list = document.createElement('p');
+        preview.appendChild(list);
+
+        for(const file of curFiles) {
+          const listItem = document.createElement('p');
+          const para = document.createElement('p');
+
+          if(validFileType(file)) {
+            para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
+            const image = document.createElement('img');
+            image.src = URL.createObjectURL(file);
+
+            listItem.appendChild(image);
+            listItem.appendChild(para);
+          } else {
+            para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+            listItem.appendChild(para);
+          }
+
+          list.appendChild(listItem);
+        }
+      }
+    }
+
+// https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
+    const fileTypes = [
+        'image/apng',
+        'image/bmp',
+        'image/gif',
+        'image/jpeg',
+        'image/pjpeg',
+        'image/png',
+        'image/svg+xml',
+        'image/tiff',
+        'image/webp',
+        `image/x-icon`
+    ];
+
+    function validFileType(file) {
+      return fileTypes.includes(file.type);
+    }
+
+    function returnFileSize(number) {
+      if(number < 1024) {
+        return number + 'bytes';
+      } else if(number > 1024 && number < 1048576) {
+        return (number/1024).toFixed(1) + 'KB';
+      } else if(number > 1048576) {
+        return (number/1048576).toFixed(1) + 'MB';
+      }
+    }
+  </script>
+{% endblock %}
